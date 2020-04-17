@@ -32,6 +32,7 @@ matrix:
         - git config --global user.email "madhukarhbti@gmail.com"
         - export TRAVIS_TAG=aarch64-python-wheels-1.0
         - git tag $TRAVIS_TAG
+        - pip install cryptography cffi
 
       deploy:
         provider: pypi
