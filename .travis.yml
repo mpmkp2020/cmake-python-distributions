@@ -54,7 +54,7 @@ before_install:
   - python -m pip install --disable-pip-version-check --upgrade pip
   - which python
   - sudo which python
-  - sudo python -m pip install cryptography cffi
+  - sudo /home/travis/virtualenv/python3.7.5/bin/python -m pip install cryptography cffi
   - pip install -U scikit-ci scikit-ci-addons 
   - ci_addons --install ../addons
 
