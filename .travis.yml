@@ -28,22 +28,19 @@ matrix:
         - PYTHON_VERSION=3.7.4
 
       before_deploy:
-        - git config --global user.name "odidev"
-        - git config --global user.email "odidev@puresoftware.com"
-        - git config --global --list
+        - git config --global user.name "mpmkp2020"
+        - git config --global user.email "madhukarhbti@gmail.com"
         - export TRAVIS_TAG=aarch64-python-wheels-1.0
         - git tag $TRAVIS_TAG
-        - python setup.py bdist_wheel
 
       deploy:
-        provider: releases
-        api_key: 
-          secure: U2FS/+pvbrtWwSvHpL/fbz48HyexWmV8c1x6YbgFyilElSkHv/OBmD/4p3vOSm4LVREpysOeT45zd+WgoH48COt+TFzOPxYEBGA5SDZtTFP2dResSzvxyxSi983vPIXFPt+o8c5uTjFzXqjmvAs318AqUImzEUK3f2/7XHGckbMdV3OLBz63SYM7A0NnBYefYec3sMD1UAMJte+lGRyQBdYVGViXHDECgOv3L3iNzrw7kAS1IzqgUPaCA898ZSiu+yTsQaX75e8awGrRrZdBEJs1f+j2KvwqIJhbTBwlWxBph6wy/0rWW5zxE4dDu9DT6hcEBc2OPIqDy0Aqss1oWfimnb9cyKnFX31fGVrrty+w+slHhabX5WQu4A0YAvrfD37yXb8Ky9csw3ZI/8o/llxlmuXTqnuGxg4oMxzSqniVvdC63/5SsUTPMg4t/c9uIxgKgO2U3t7YlA3YfdsdRAOMOKhCY82vTPdZOjJXqIIS/9GHio4Q3UgUa5wWlnxiW/l/eyne7cBRHlbCV9OGRFJYxI5nRttM6HcX8EuU3Pqle7P4akD2wSpEumM/wXud/eL5JBdD7gnlHCQ0tjglwUqTPUzkKIwJtF5u1imj7x/x6dqnJGYtIMNDGKDXnKnt9KmYLk2X0NolJk27qp0u9wcTGoHUh4WiHgTBOUTGgGg=
-        file_glob: true
-        file: ./dist/*.whl
-        skip_cleanup: true
+        provider: pypi
+        user: mkp2020
+        password:
+          secure: KDSRay3RPMLwf+7PsIcfPTdEWAQ1dox255qZG3csHWILhiLnBBqwF+Sq+zqdASwPH4MaQSBU9Bbs4Bbv7stArSX6of8TpHo77PQr6atyc/HXTgQuUWmx5V4zF2QTvOew769F/rY656iY8To4V7CHWzgZPw3EuoPP1Ibsps7Dgsp8rjOXnS3hTI28tGKeilrnX88BR0T0zgLkLx2xJWszYPpQBVXmDNBqWfgihobpgl6SEhnc9au896mQMNeHIyRmUPkZegmPc8heostHkYy+nvw54fu1bWX2xw1Ewe779kiV2Aj7MvG6rdJk7RqRySYM+1OdhOrXgL1wA+UlCjvY1m2hQ+s2SKVI6GfxuSNodvcB/PzglFZCBBgNXEbp5HxPTvuXDDUk5JLFYO8BF/WRUXFfkn5fuSMPUQo80eiBL/DrF97WO8b6F2guKC7Ut/Na3JJqsv7clNkENjV0Y7UEtCLk8GtgVdJIMtOLREg96RYwKw3V8SfNxmFge5YFBSveeI7eL/DLnMs9bf5dQOrXKeoVhODU/2FCHIh82nIT4Uc+gsVEI6VdGsbIYY75RfXcfjYxuhToqeX+OJlDRwnXRCObcG2AOViIDv8WwT8AcKkiOOkZqiNpw0+mj/u6A0fOx2U2RaitbrfxPdnhuVwx8RkDllFAUWXX1Nygwspe5aU=
         on:
-           repo: odidev/cmake-python-distributions
+          distributions: sdist bdist_wheel
+          repo: mpmkp2020/cmake-python-distributions
 
 cache:
   directories:
