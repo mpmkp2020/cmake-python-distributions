@@ -51,7 +51,9 @@ cache:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir $HOME/bin; ln -s $(which pip2) $HOME/bin/pip; ln -s $(which python2) $HOME/bin/python; fi
   - python scripts/ssl-check.py
-  - python -m pip install --disable-pip-version-check --upgrade pip   
+  - python -m pip install --disable-pip-version-check --upgrade pip
+  - which python
+  - sudo which python
   - sudo python -m pip install cryptography cffi
   - pip install -U scikit-ci scikit-ci-addons 
   - ci_addons --install ../addons
