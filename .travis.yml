@@ -39,8 +39,8 @@ matrix:
         password:
           secure: KDSRay3RPMLwf+7PsIcfPTdEWAQ1dox255qZG3csHWILhiLnBBqwF+Sq+zqdASwPH4MaQSBU9Bbs4Bbv7stArSX6of8TpHo77PQr6atyc/HXTgQuUWmx5V4zF2QTvOew769F/rY656iY8To4V7CHWzgZPw3EuoPP1Ibsps7Dgsp8rjOXnS3hTI28tGKeilrnX88BR0T0zgLkLx2xJWszYPpQBVXmDNBqWfgihobpgl6SEhnc9au896mQMNeHIyRmUPkZegmPc8heostHkYy+nvw54fu1bWX2xw1Ewe779kiV2Aj7MvG6rdJk7RqRySYM+1OdhOrXgL1wA+UlCjvY1m2hQ+s2SKVI6GfxuSNodvcB/PzglFZCBBgNXEbp5HxPTvuXDDUk5JLFYO8BF/WRUXFfkn5fuSMPUQo80eiBL/DrF97WO8b6F2guKC7Ut/Na3JJqsv7clNkENjV0Y7UEtCLk8GtgVdJIMtOLREg96RYwKw3V8SfNxmFge5YFBSveeI7eL/DLnMs9bf5dQOrXKeoVhODU/2FCHIh82nIT4Uc+gsVEI6VdGsbIYY75RfXcfjYxuhToqeX+OJlDRwnXRCObcG2AOViIDv8WwT8AcKkiOOkZqiNpw0+mj/u6A0fOx2U2RaitbrfxPdnhuVwx8RkDllFAUWXX1Nygwspe5aU=
         on:
-          distributions: sdist bdist_wheel
           repo: mpmkp2020/cmake-python-distributions
+        distributions: sdist bdist_wheel
 
 cache:
   directories:
