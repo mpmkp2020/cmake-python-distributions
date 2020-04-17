@@ -30,7 +30,7 @@ matrix:
       before_deploy:
         - git config --global user.name "mpmkp2020"
         - git config --global user.email "madhukarhbti@gmail.com"
-        - export TRAVIS_TAG=aarch64-python-wheels-1.0
+        - export TRAVIS_TAG=aarch64-python-wheels
         - git tag $TRAVIS_TAG
 
       deploy:
@@ -54,13 +54,13 @@ before_install:
   - python -m pip install --disable-pip-version-check --upgrade pip
   - which python
   - sudo which python
-  - sudo /home/travis/virtualenv/python3.7.5/bin/python -m pip install cryptography cffi
   - pip install -U scikit-ci scikit-ci-addons 
   - ci_addons --install ../addons
 
 install:
   - if [ "${TRAVIS_CPU_ARCH}" == "arm64" ]; then
        pip install scikit-build;
+       /home/travis/virtualenv/python3.7.5/bin/python -m pip install cryptography cffi;
     else
        ci install;
     fi
