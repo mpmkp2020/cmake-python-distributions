@@ -32,7 +32,6 @@ matrix:
         - git config --global user.email "madhukarhbti@gmail.com"
         - export TRAVIS_TAG=aarch64-python-wheels-1.0
         - git tag $TRAVIS_TAG
-        - pip install cryptography cffi
 
       deploy:
         provider: pypi
@@ -52,7 +51,8 @@ cache:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir $HOME/bin; ln -s $(which pip2) $HOME/bin/pip; ln -s $(which python2) $HOME/bin/python; fi
   - python scripts/ssl-check.py
-  - python -m pip install --disable-pip-version-check --upgrade pip
+  - python -m pip install --disable-pip-version-check --upgrade pip   
+  - sudo python -m pip install cryptography cffi
   - pip install -U scikit-ci scikit-ci-addons 
   - ci_addons --install ../addons
 
